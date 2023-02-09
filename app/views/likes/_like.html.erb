@@ -1,0 +1,25 @@
+<div class="like">
+  <div class="like__btn">
+    <% if current_user.liked_posts.include?(post) %>
+      <% like_id = current_user.likes.select { |likes| likes.post_id == post.id } %>
+      <%= button_to "Liked",
+          like_path(like_id),
+          method: :delete,
+          class: "btn btn--secondary btn--small"
+      %>
+    <% elsif post.user != current_user %>
+      <%= button_to "Like",
+          likes_path,
+          params: { "like[post_id]": post.id, "like[user_id]": current_user.id },
+          method: :post,
+          class: "btn btn--light btn--small"
+      %>
+    <% end %>
+  </div>
+  
+  <div class="like__count">
+    <% if post.liked_by.any? %>
+      <%= pluralize(post.liked_by.count, "Like") %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-large);
+  padding: var(--space-xs) var(--space-m);
+  background-color: (var(--color-white));
+
+  &__home {
+    font-weight: bold;
+    font-size: var(--font-size-xxl);
+    color: var(--color-text-header);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-m);
+  }
+}

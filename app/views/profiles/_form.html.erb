@@ -1,0 +1,28 @@
+<%= form_with model: profile do |form| %>
+  <%= form_error_notification(profile) %>
+
+  <div class="field">
+    <%= form.label :name, "Name" %><br />
+    <%= form.text_field :name, placeholder: "Jane Doe" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location, "Location" %><br />
+    <%= form.text_field :location, placeholder: "London, UK" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday, "Birthday" %><br />
+    <%= form.date_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture, "Change your profile picture *" %><br />
+    <%= form.file_field :picture %>
+    <p>* Picture must be in a square format or else it will be cropped</p>
+  </div>
+  
+  <%= form.submit "Save", class: "btn btn--secondary" %>
+
+  <%= link_to "Back to my page", user_path(current_user), class: "btn btn--light" %>
+<% end %>

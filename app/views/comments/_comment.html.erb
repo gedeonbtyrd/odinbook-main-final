@@ -1,0 +1,9 @@
+<div class="comment">
+  <div class="comment__header">
+      <%= render "layouts/post_comment_meta", author: comment.user, date: comment.created_at %>
+  </div>
+
+  <div class="comment__body">
+    <%= comment.content %>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<%= turbo_stream.update nested_dom_id(@post, Comment.new), "" %>
+
+<%= turbo_stream.append nested_dom_id(@post, "comments") do %>
+  <%= render @comment, post: @post %>
+<% end %>

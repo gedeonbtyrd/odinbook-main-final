@@ -1,0 +1,40 @@
+<ul class="notifications" data-controller="toggle" data-toggle-change-class="hidden">
+  <% if current_user.pending_friend_requests.any? %>
+    <li class="notifications--parent">
+      <%= button_tag image_tag("notifications/new.png", class: "notifications--icon"),
+                     class: "btn",
+                     data: { action: "toggle#switch" } %>
+      <ul class="notifications--children hidden"
+          data-toggle-target="toToggle" >
+        <h4>Friend Requests</h4>
+        <% current_user.pending_friend_requests.each do |request| %>
+          <li>
+            <div class="notifications__name">
+              <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
+            </div>
+            <%= button_to "Accept",
+              friend_request_path(request.id),
+              params: { "friend_request[status]": "accepted" },
+              method: :patch,
+              class: "btn btn--secondary" %>
+            <%= button_to "Decline",
+              friend_request_path(request.id),
+              params: { "friend_request[status]": "declined" },
+              method: :patch,
+              class: "btn btn--light" %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% else %>
+    <li class="notifications--parent">
+      <%= button_tag image_tag("notifications/none.png", class: "notifications--icon"),
+                     class: "btn",
+                     data: { action: "toggle#switch" } %>
+      <ul class="notifications--children hidden"
+          data-toggle-target="toToggle" >
+        <li class="notifications--none">Nothing new for now</li>
+      </ul>
+    </li>
+  <% end %>
+</ul>

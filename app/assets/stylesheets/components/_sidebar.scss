@@ -1,0 +1,28 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+
+  &__profile {
+    h2 {
+      text-align: center;
+      margin-bottom: var(--space-xs);
+    }
+    p {
+      font-size: var(--font-size-s);
+    }
+  }
+
+  &__friends {
+    &--container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-xs);
+      margin: var(--space-xs) 0;
+    }
+
+    img {
+      width: 40px;
+    }
+  }
+}

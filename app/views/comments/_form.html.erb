@@ -1,0 +1,13 @@
+<%= form_with model: [post, comment],
+              data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" },
+              class: "comment" do |form| %>
+  <%= form_error_notification(comment) %>
+
+  <%= form.label :content, "Content", class: "hidden" %>
+  <%= form.text_area :content, class: "comment__content" %>
+
+  <div class="comment__actions">
+    <%= link_to "Cancel", posts_path, class: "btn btn--light btn--small" %>
+    <%= form.submit "Comment", class: "btn btn--secondary btn--small" %>
+  </div>
+<% end %>

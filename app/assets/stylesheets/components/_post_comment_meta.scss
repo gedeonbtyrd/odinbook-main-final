@@ -1,0 +1,10 @@
+.post-comment-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+
+  &__date {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-s);
+  }
+}

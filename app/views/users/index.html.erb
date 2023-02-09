@@ -1,0 +1,9 @@
+<main class="container">
+  <div class="header">
+    <h1>Find New Friends</h1>
+  </div>
+  
+  <%= turbo_frame_tag "users" do %>
+    <%= render @users %>
+  <% end %>
+</main>

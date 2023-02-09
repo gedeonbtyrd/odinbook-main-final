@@ -1,0 +1,9 @@
+<main class="container">
+  <div class="header">
+    <h1>New comment</h1>
+  </div>
+
+  <%= turbo_frame_tag nested_dom_id(@post, Comment.new) do %>
+    <% render "form", post: @post, comment: @comment%>
+  <% end %>
+</main>

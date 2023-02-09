@@ -1,0 +1,9 @@
+<main class="container">
+  <div class="header">
+    <h1>New post</h1>
+  </div>
+
+  <%= turbo_frame_tag Post.new do %>
+    <% render "form", post: @post%>
+  <% end %>
+</main>

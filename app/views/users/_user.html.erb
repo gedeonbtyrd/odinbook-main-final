@@ -1,0 +1,23 @@
+<%= turbo_frame_tag user do %>
+  <div class="user">
+
+  <% if user.profile %>
+      <%= image_tag user.profile.picture_attachment_path %>
+      <%= link_to user.profile.name, user %>
+    <% end %>
+
+   
+
+    <% if current_user.friends.include?(user) %>
+      <p>Friends</p>
+    <% elsif current_user.requested_friends.include?(user) || current_user.declined_friends.include?(user) %>
+      <p>Request Sent</p>
+    <% else %>
+      <%= button_to "Send Friend Request",
+        friend_requests_path,
+        params: { "friend_request[sent_by_id]": current_user.id, "friend_request[sent_to_id]": user.id },
+        method: :post,
+        class: "btn btn--primary" %>
+    <% end %>
+  </div>
+<% end %>

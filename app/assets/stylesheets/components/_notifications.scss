@@ -1,0 +1,36 @@
+.notifications {
+  &--icon {
+    width: var(--space-l);
+  }
+
+  &--parent {
+    position: relative;
+    list-style: none;
+  }
+
+  &--children {
+    position: absolute;
+    top: 140%;
+    overflow: auto;
+    box-shadow: var(--shadow-large);
+    padding: var(--space-xs) var(--space-m);
+    background-color: (var(--color-white));
+    border-radius: var(--border-radius);
+
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    h4 {
+      margin-bottom: var(--space-xs);
+    }
+  }
+  
+  &--none {
+    width: max-content;
+  }
+}

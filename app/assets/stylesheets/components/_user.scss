@@ -1,0 +1,9 @@
+.user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-s);
+
+  img {
+    width: 100px;
+  }
+}

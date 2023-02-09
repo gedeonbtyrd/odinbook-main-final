@@ -1,0 +1,28 @@
+<%= turbo_frame_tag post do %>
+  <div class="post">
+    <div class="post__header">
+        <%= render "layouts/post_comment_meta", author: post.user, date: post.created_at %>
+    </div>
+    
+    <div class="post__body">
+      <%= post.content %>
+    </div>
+
+    <div class="post__footer">
+      <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
+        <%= render partial: "likes/like", locals: { post: post } %>
+      <% end %>
+
+      <%= turbo_frame_tag nested_dom_id(post, "comments") do %>
+        <%= render post.comments, post: post %>
+      <% end %>
+
+      <%= link_to "Add a comment",
+                  [:new, post, :comment],
+                  data: { turbo_frame: nested_dom_id(post, Comment.new) },
+                  class: "btn btn--light btn--small" %>
+
+      <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
+    </div>
+  </div>
+<% end%>
