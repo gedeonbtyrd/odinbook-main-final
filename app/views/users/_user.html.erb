@@ -17,7 +17,7 @@
         friend_requests_path,
         params: { "friend_request[sent_by_id]": current_user.id, "friend_request[sent_to_id]": user.id },
         method: :post,
-        class: "btn btn--primary" %>
+        class: "btn btn-outline-primary" %>
     <% end %>
   </div>
 <% end %>
