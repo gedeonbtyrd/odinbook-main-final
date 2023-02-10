@@ -3,7 +3,7 @@
 
   <% if user.profile %>
       <%= image_tag user.profile.picture_attachment_path %>
-      <%= link_to user.profile.name, user %>
+      <b><%= link_to user.profile.name, user %></b>
     <% end %>
 
    

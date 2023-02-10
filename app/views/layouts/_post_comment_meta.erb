@@ -1,6 +1,6 @@
 <div class="post-comment-meta">
   <div class="post-comment-meta__author">
-    <%= link_to author.profile.name, author, data: { turbo: false } %>
+    <b><%= link_to author.profile.name, author, data: { turbo: false } %></b>
   </div>
   <div class="post-comment-meta__date">
     <%= formatted_datetime(date) %>

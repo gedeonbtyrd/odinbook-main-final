@@ -5,14 +5,14 @@
       <%= button_to "Liked",
           like_path(like_id),
           method: :delete,
-          class: "btn btn--secondary btn--small"
+          class: "btn btn-outline-primary btn-sm"
       %>
     <% elsif post.user != current_user %>
       <%= button_to "Like",
           likes_path,
           params: { "like[post_id]": post.id, "like[user_id]": current_user.id },
           method: :post,
-          class: "btn btn--light btn--small"
+          class: "btn btn-outline-primary btn-sm"
       %>
     <% end %>
   </div>

@@ -8,14 +8,14 @@
       <%= render "layouts/notifications" %>
       <%= link_to "Find New Friends",
                   users_path,
-                  class: "btn btn--light" %>
+                  class: "btn btn-outline-info btn-sm" %>
       <%= link_to "My Profile",
                   user_path(current_user.id),
-                  class: "btn btn--light" %>
+                  class: "btn btn-outline-primary btn-sm" %>
       <%= link_to "Log out",
                   destroy_user_session_path,
                   data: { turbo_method: :delete },
-                  class: "btn btn--dark" %>
+                  class: "btn btn-danger btn-sm" %>
     </div>
   <% end %>
 </header>

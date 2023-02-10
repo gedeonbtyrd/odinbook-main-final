@@ -1,3 +1,5 @@
+
+<div class="wrapper">
 <%= turbo_frame_tag post do %>
   <div class="post">
     <div class="post__header">
@@ -5,7 +7,7 @@
     </div>
     
     <div class="post__body">
-      <%= post.content %>
+      <b><%= post.content %></b>
     </div>
 
     <div class="post__footer">
@@ -20,9 +22,10 @@
       <%= link_to "Add a comment",
                   [:new, post, :comment],
                   data: { turbo_frame: nested_dom_id(post, Comment.new) },
-                  class: "btn btn--light btn--small" %>
+                  class: "btn btn-outline-dark btn-sm" %>
 
       <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
     </div>
   </div>
 <% end%>
+<div>

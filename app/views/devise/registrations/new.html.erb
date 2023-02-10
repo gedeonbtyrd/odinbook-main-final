@@ -1,5 +1,5 @@
 <main class="container">
-<div class="wrapper">
+<div class="wrapper" style="margin-top: 5rem;">
   <div class="header">
      
     </div>
@@ -28,12 +28,12 @@
       <%= f.fields_for :profile do |profile_form| %>
         <div class="field">
           <br />
-          <%= profile_form.text_field :name, placeholder: "Name: " %>
+          <%= profile_form.text_field :name, placeholder: "Name" %>
         </div>
     
         <div class="field">
           <br />
-          <%= profile_form.text_field :location, placeholder: "Location" %>
+          <%= profile_form.text_field :location, placeholder: "Address" %>
         </div>
     
         <div class="field">
@@ -51,6 +51,7 @@
       <div class="actions">
         <%= f.submit "Sign up", class: "btn btn-outline-info" %>
       </div>
+      <br>
     <% end %>
     
     <%= render "devise/shared/links" %>

@@ -7,7 +7,7 @@
   <%= form.text_area :content, class: "comment__content" %>
 
   <div class="comment__actions">
-    <%= link_to "Cancel", posts_path, class: "btn btn--light btn--small" %>
-    <%= form.submit "Comment", class: "btn btn--secondary btn--small" %>
+    <%= link_to "Cancel", posts_path, class: "btn btn-outline-danger btn-sm" %>
+    <%= form.submit "Comment", class: "btn btn-outline-dark btn-sm" %>
   </div>
 <% end %>

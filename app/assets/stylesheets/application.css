@@ -14,8 +14,10 @@
  *= require_self
  */
  *{
-    font-family: Garamond;
+    font-family: Sans-serif;
  }
+
+ 
 .navbar{
     width: 100%;
     position: fixed;
@@ -29,11 +31,11 @@
 
 .container{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     flex-direction: column;
 }
 
@@ -41,7 +43,7 @@
     text-align: center;
     align-items: center;
     padding: 1rem;
-    width: 25rem;
+    width: 70rem;
     height: fit-content;
     background: rgba( 255, 255, 255, 0.45 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -52,9 +54,73 @@
 }
 
 .container .wrapper .header h1{
-    color: red;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.container1{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    flex-direction: row-reverse;
+}
+
+.wrappermain{
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-top: 10rem;
+    padding: 1rem;
+    text-align: center;
+    width: 25rem;
+}
+
+.wrappermain1{
+    margin-top: 8rem;
+    padding: 1rem;
+    width: 30rem;
+
+}
+
+.wrappermain1 h1{
+    color: #6080c0;
+    font-weight: bolder;
+    font-size: 60px;
+    
+}
+
+.wrappermain1 p{
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.user a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.sidebar__profile h4 b{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.post-comment-meta .post-comment-meta__author a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}
+
+.container1 .wrappermain .btn{
+    width: 100%;
+    font-weight: bold;
+}

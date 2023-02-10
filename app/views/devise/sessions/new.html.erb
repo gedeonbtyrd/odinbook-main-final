@@ -1,18 +1,16 @@
-<main class="container">
-<div class="wrapper">
-  <div class="header">
-      
-    </div>
-    <h1>Log in</h1><br>
+<main class="container1">
+<div class="wrappermain">
+    <p>&nbsp&nbsp</p>
+   
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
       <div class="field">
         
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email or phone number", class: "form-control" %>
       </div>
-    
+    <br>
       <div class="field">
         
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your password" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "form-control" %>
       </div>
     
       <% if devise_mapping.rememberable? %>
@@ -23,11 +21,19 @@
       <% end %>
     
       <div class="actions">
-        <%= f.submit "Log in", class: "btn btn-outline-primary" %>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
       </div>
     <% end %>
+    <hr>
+  
     
     <%= render "devise/shared/links" %>
 </div>
-  
+
+  <div class="wrappermain1">
+    <h1>facebook</h1>
+    <br>
+    <p>Connect with friends and the world around you on Facebook.</p>
+  </div>
+
 </main>

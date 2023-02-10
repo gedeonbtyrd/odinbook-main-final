@@ -13,6 +13,7 @@ module ApplicationHelper
 
   # Handling of timezone based on current_user to be implemented later
   def formatted_datetime(created_at)
-    created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%b %d, %Y at %H:%M (EST)')
+    created_at.in_time_zone('Asia/Manila').strftime('%b %d, %Y at %H:%M %p')
   end
+  
 end

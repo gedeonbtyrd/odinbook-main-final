@@ -1,16 +1,19 @@
 <main class="container">
+<div style="margin-top: 5rem;">
   <div class="header">
-    <h1>Posts</h1>
+      <h1>Posts</h1><br><span>&nbsp&nbsp&nbsp&nbsp</span>
 
-    <%= link_to "Add New post",
-                new_post_path,
-                data: { turbo_frame: dom_id(Post.new) },
-                class: "btn btn-outline-primary btn-sm" %>
-  </div>
+      <%= link_to "Add New post",
+                  new_post_path,
+                  data: { turbo_frame: dom_id(Post.new) },
+                  class: "btn btn-outline-dark btn-sm" %>
+    </div>
 
-  <%= turbo_frame_tag Post.new %>
+    <%= turbo_frame_tag Post.new %>
+    
+    <%= turbo_frame_tag "posts" do %>
+      <%= render @posts %>
+    <% end %>
+</div>
   
-  <%= turbo_frame_tag "posts" do %>
-    <%= render @posts %>
-  <% end %>
 </main>

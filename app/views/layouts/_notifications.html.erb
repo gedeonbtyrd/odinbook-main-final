@@ -10,18 +10,19 @@
         <% current_user.pending_friend_requests.each do |request| %>
           <li>
             <div class="notifications__name">
+            
               <%= link_to request.sent_by.profile.name, user_path(request.sent_by.id) %>
             </div>
             <%= button_to "Accept",
               friend_request_path(request.id),
               params: { "friend_request[status]": "accepted" },
               method: :patch,
-              class: "btn btn--secondary" %>
+              class: "btn btn-outline-success btn-sm" %>
             <%= button_to "Decline",
               friend_request_path(request.id),
               params: { "friend_request[status]": "declined" },
               method: :patch,
-              class: "btn btn--light" %>
+              class: "btn btn-outline-danger btn-sm" %>
           </li>
         <% end %>
       </ul>

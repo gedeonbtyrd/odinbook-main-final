@@ -1,24 +1,26 @@
-<main class="container user-show">
+<main class="container user-show" >
   <div class="sidebar">
     <div class="sidebar__profile">
       <%= image_tag @profile.picture_attachment_path %>
-      <h2><%= @profile.name %></h2>
-      <p>Location: <%= @profile.location %></p>
-      <p>Birthday: <%= @profile.formatted_birthday %></p>
+      <h4><b><%= @profile.name %></b></h4>
+      <p>Address: <%= @profile.location %></p>
+      <p>Birth date <%= @profile.formatted_birthday %></p>
 
       <% if current_user == @user %>
         <%= link_to "Edit my profile",
                     edit_profile_path(current_user.profile.id),
-                    class: "btn btn--light btn--small" %>
+                    class: "btn btn-outline-dark btn-sm" %>
       <% end %>
     </div>
 
     <div class="sidebar__friends">
     <% if current_user == @user || current_user.friends.include?(@user) %>
-        <h4>Friends</h4>
+        <h4>Friends List</h4>
         <div class="sidebar__friends--container">
           <% @user.friends.each do |friend| %>
             <%= link_to image_tag(friend.profile.picture_attachment_path), friend %>
+            <%= friend.profile.name %>
+
           <% end %>
         </div>
       <% end %>
@@ -27,10 +29,10 @@
   
   <div class="user__posts">
     <% if current_user == @user %>
-      <%= link_to "New post",
+      <%= link_to " Add new post",
               new_post_path,
               data: { turbo_frame: dom_id(Post.new) },
-              class: "btn btn-outline-primary" %>
+              class: "btn btn-outline-primary btn-sm" %>
 
       <%= turbo_frame_tag Post.new %>
 

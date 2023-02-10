@@ -1,11 +1,13 @@
+<br>
 <main class="container">
-  <div class="header">
-    <h1>Edit profile</h1>
-  </div>
+<div class="wrapper" style="margin-top: 10rem;"> 
 
+<h1>Edit profile</h1>
   <%= turbo_frame_tag Profile.new do %>
     <% render "form", profile: @profile%>
   <% end %>
-
-  <%= link_to "Change password or email", edit_user_registration_path(current_user) %>
+  <br>
+  <%= link_to "Change password or email", edit_user_registration_path(current_user), class:"btn btn-outline-secondary btn-sm" %>
+</div>
+ 
 </main>
