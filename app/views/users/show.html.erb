@@ -1,26 +1,25 @@
 <main class="container user-show" >
-  <div class="sidebar">
-    <div class="sidebar__profile" style="margin-top: 5rem;">
+  <div class="sidebar" style="margin-top: 5rem;">
+    <div class="sidebar__profile">
       <%= image_tag @profile.picture_attachment_path %>
       <h4><b><%= @profile.name %></b></h4>
-      <p>Address: <%= @profile.location %></p>
-      <p>Birth date <%= @profile.formatted_birthday %></p>
+      <p><b>Address:</b> <%= @profile.location %></p>
+      <p><b>Birth Date</b> <%= @profile.formatted_birthday %></p>
 
       <% if current_user == @user %>
         <%= link_to "Edit my profile",
                     edit_profile_path(current_user.profile.id),
-                    class: "btn btn-outline-dark btn-sm" %>
+                    class: "btn btn-dark btn-sm" %>
       <% end %>
     </div>
-
+    
     <div class="sidebar__friends">
     <% if current_user == @user || current_user.friends.include?(@user) %>
-        <h4>Friends List</h4>
+        <h4><b>Friends List</b></h4>
         <div class="sidebar__friends--container">
           <% @user.friends.each do |friend| %>
             <%= link_to image_tag(friend.profile.picture_attachment_path), friend %>
             <b><%= friend.profile.name %></b>
-
           <% end %>
         </div>
       <% end %>

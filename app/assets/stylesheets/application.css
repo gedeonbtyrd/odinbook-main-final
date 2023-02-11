@@ -22,6 +22,7 @@
     width: 100%;
     position: fixed;
     background-color: #4267B2;
+    padding-left: 20rem;
 }
 .navbar a{
     color: white;
@@ -137,13 +138,13 @@
     flex-direction: column;
 }
 
-.container2 .wrapper2{
+.container2 .wrapper2, .sidebar{
     text-align: center;
     align-items: center;
     padding: 1rem;
     width: 25rem;
     height: fit-content;
-    background: rgba( 255, 255, 255, 0.45 );
+    background: rgba(235, 231, 231, 0.45);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
@@ -177,5 +178,10 @@
 }
 
 .post{
-    background-color: rgb(224, 224, 212);
+    background-color: rgb(231, 231, 222);
 }
+
+.sidebar__profile img{
+    border-radius: 50%;
+}
+
