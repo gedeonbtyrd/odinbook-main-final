@@ -13,7 +13,8 @@ module ApplicationHelper
 
   # Handling of timezone based on current_user to be implemented later
   def formatted_datetime(created_at)
-    created_at.in_time_zone('Asia/Manila').strftime('%b %d, %Y at %H:%M %p')
-  end
+  created_at.in_time_zone('Asia/Manila').strftime('%b %d, %Y at %H:%M %p') + " (" + time_ago_in_words(created_at) + " ago)"
+end
+
   
 end

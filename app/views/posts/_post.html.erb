@@ -1,31 +1,30 @@
-
 <div class="wrapper">
-<%= turbo_frame_tag post do %>
-  <div class="post">
-    <div class="post__header">
+  <%= turbo_frame_tag post do %>
+    <div class="post">
+      <div class="post__header">
         <%= render "layouts/post_comment_meta", author: post.user, date: post.created_at %>
-    </div>
-    
-    <div class="post__body">
-      <b><%= post.content %></b>
-    </div>
+      </div>
+        <div class="post__body">
+            <b><%= post.content %></b>
+        </div>
 
-    <div class="post__footer">
-      <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
-        <%= render partial: "likes/like", locals: { post: post } %>
-      <% end %>
+      <div class="post__footer">
+    <%= turbo_frame_tag nested_dom_id(post, "likes") do %>
+      <%= render partial: "likes/like", locals: { post: post } %>
+    <% end %>
 
-      <%= turbo_frame_tag nested_dom_id(post, "comments") do %>
-        <%= render post.comments, post: post %>
-      <% end %>
+    <%= turbo_frame_tag nested_dom_id(post, "comments") do %>
+      <%= render post.comments, post: post %>
+    <% end %>
 
-      <%= link_to "Add a comment",
-                  [:new, post, :comment],
-                  data: { turbo_frame: nested_dom_id(post, Comment.new) },
-                  class: "btn btn-outline-dark btn-sm" %>
+    <%= link_to "Add a comment",
+                [:new, post, :comment],
+                data: { turbo_frame: nested_dom_id(post, Comment.new) },
+                class: "btn btn-primary btn-sm" %>
 
-      <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
-    </div>
+    <%= turbo_frame_tag nested_dom_id(post, Comment.new) %>
   </div>
-<% end%>
+</div>
+<% end %>
 <div>
+

@@ -3,22 +3,22 @@
 
   <div class="field">
     <br />
-    <%= form.text_field :name, placeholder: "Enter your name" %>
+    <%= form.text_field :name, placeholder: "Enter your name", class:"form-control" %>
   </div>
 
   <div class="field">
     <br />
-    <%= form.text_field :location, placeholder: "Enter your address" %>
+    <%= form.text_field :location, placeholder: "Enter your address", class:"form-control"  %>
   </div>
 
   <div class="field">
     <%= form.label :birthday, "Birthdate" %><br />
-    <%= form.date_field :birthday %>
+    <%= form.date_field :birthday, class:"form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :picture, "Update your profile picture" %><br />
-    <%= form.file_field :picture %>
+    <%= form.file_field :picture, class:"form-control"  %>
   </div>
   
   <%= form.submit "Save", class: "btn btn-outline-success btn-sm" %>

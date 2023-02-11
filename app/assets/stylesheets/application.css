@@ -68,6 +68,7 @@
     align-items: center;
     gap: 10rem;
     flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
 }
 
 .wrappermain{
@@ -123,4 +124,58 @@
 .container1 .wrappermain .btn{
     width: 100%;
     font-weight: bold;
+}
+
+
+.container2{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+.container2 .wrapper2{
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    width: 25rem;
+    height: fit-content;
+    background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.container2 .wrapper2 .actions .btn{
+    width: 100%;
+}
+
+.container2 .wrapper2 h1 p{
+    text-align: left;
+}
+
+.container .sidebar__friends .sidebar__friends--container{
+    padding: 1rem;
+}
+
+.container .sidebar__friends b{
+    text-transform: capitalize;
+}
+
+.user{
+    margin-bottom: 1rem;
+    
+}
+
+.comment{
+    background-color: rgb(243, 242, 238);
+}
+
+.post{
+    background-color: rgb(224, 224, 212);
 }

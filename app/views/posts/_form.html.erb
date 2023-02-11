@@ -4,7 +4,7 @@
   <%= form_error_notification(post) %>
 
   <%= form.label :content, "Content", class: "hidden" %>
-  <%= form.text_area :content, class: "post__content" %>
+  <%= form.text_area :content, class: "post__content", placeholder:"What's on your mind?" %>
 
   <div class="post__actions">
     <%= link_to "Cancel", posts_path, class: "btn btn-outline-dark btn-sm" %>

@@ -1,6 +1,6 @@
 <main class="container user-show" >
   <div class="sidebar">
-    <div class="sidebar__profile">
+    <div class="sidebar__profile" style="margin-top: 5rem;">
       <%= image_tag @profile.picture_attachment_path %>
       <h4><b><%= @profile.name %></b></h4>
       <p>Address: <%= @profile.location %></p>
@@ -19,7 +19,7 @@
         <div class="sidebar__friends--container">
           <% @user.friends.each do |friend| %>
             <%= link_to image_tag(friend.profile.picture_attachment_path), friend %>
-            <%= friend.profile.name %>
+            <b><%= friend.profile.name %></b>
 
           <% end %>
         </div>

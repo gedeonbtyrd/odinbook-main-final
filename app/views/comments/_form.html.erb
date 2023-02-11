@@ -4,7 +4,7 @@
   <%= form_error_notification(comment) %>
 
   <%= form.label :content, "Content", class: "hidden" %>
-  <%= form.text_area :content, class: "comment__content" %>
+  <%= form.text_area :content, class: "comment__content", placeholder:"Add a comment..." %>
 
   <div class="comment__actions">
     <%= link_to "Cancel", posts_path, class: "btn btn-outline-danger btn-sm" %>
