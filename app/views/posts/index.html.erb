@@ -3,10 +3,10 @@
   <div class="header">
       <h1>Posts</h1><br><span>&nbsp&nbsp&nbsp&nbsp</span>
 
-      <%= link_to "Add New post",
+      <%= link_to "New Post +",
                   new_post_path,
                   data: { turbo_frame: dom_id(Post.new) },
-                  class: "btn btn-outline-dark btn-sm" %>
+                  class: "btn btn-outline-success btn-sm" %>
     </div>
 
     <%= turbo_frame_tag Post.new %>
